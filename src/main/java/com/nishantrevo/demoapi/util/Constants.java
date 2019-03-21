@@ -4,7 +4,7 @@ public class Constants {
 
 
     public static final String PRIME_URI = "/prime";
-    public static final String RESULT_URI = "/result";
+    public static final String RESULT_URI = "result";
 
     public static final String MODEL_PROPERTY_NAME_MESSAGE="messageText";
     public static final String MODEL_PROPERTY_NAME_RESULT_GIF="resultGif";
