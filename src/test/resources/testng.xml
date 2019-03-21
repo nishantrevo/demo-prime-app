@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="TestSuite" parallel="classes" thread-count="4">
+	
+	<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter"/>
+		<listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+        <listener class-name="com.nishantrevo.demoapi.util.TestLoggerListener"/>
+	</listeners>
+	
+	<parameter name="testconfigfiles" value="src/test/resources/testconfig.properties"/>
+	<!--
+	<parameter name="gridrun" value="true"/>
+	<parameter name="gridurl" value="http://localhost:4444/wd/hub/"/>
+	 -->
+
+	<test name="ChromeTest">
+		<parameter name="browser" value="chrome"/>
+		<packages>
+			<package name="com.nishantrevo.demoapi.test.ui"/>
+		</packages>
+	</test>
+
+	<test name="FirefoxTest">
+		<parameter name="browser" value="firefox"/>
+		<packages>
+			<package name="com.nishantrevo.demoapi.test.ui"/>
+		</packages>
+	</test>
+
+	<test name="UnitTests">
+		<packages>
+			<package name="com.nishantrevo.demoapi.test.unit"/>
+		</packages>
+	</test>
+<!--
+-->
+
+</suite>
