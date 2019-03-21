@@ -11,7 +11,6 @@
 	
 	<parameter name="testconfigfiles" value="src/test/resources/testconfig.properties"/>
 	<!--
-	<parameter name="gridrun" value="true"/>
 	<parameter name="gridurl" value="http://localhost:4444/wd/hub/"/>
 	 -->
 
@@ -34,7 +33,5 @@
 			<package name="com.nishantrevo.demoapi.test.unit"/>
 		</packages>
 	</test>
-<!--
--->
 
 </suite>

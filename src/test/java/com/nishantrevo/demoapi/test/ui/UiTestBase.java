@@ -27,10 +27,9 @@ public class UiTestBase {
     }
     
     @BeforeClass
-    @Parameters({"testconfigfiles", "gridrun", "gridurl", "browser"})
+    @Parameters({"testconfigfiles", "gridurl", "browser"})
     public void configureBrowser(
             @Optional String testConfigFiles,
-            @Optional String gridRun,
             @Optional String gridUrl,
             @Optional String browser
     ) throws IOException {
@@ -42,17 +41,9 @@ public class UiTestBase {
         }
         
         //Set grid url if grid test
-        boolean isGridRun = false;
-        try {
-            if(gridRun != null)
-                isGridRun = Boolean.getBoolean(gridRun);
-            else
-                isGridRun = Boolean.getBoolean(PropertyReader.get("gridrun"));
-        }catch (Exception e){
-        }
-        if(isGridRun && (gridUrl == null || gridUrl.isEmpty())) {
+        if(gridUrl == null || gridUrl.isEmpty()) {
             Configuration.remote = PropertyReader.get("gridurl");
-        }else if(isGridRun && gridUrl != null && gridUrl.length()>0) {
+        }else{
             Configuration.remote = gridUrl;
         }
         
@@ -60,7 +51,7 @@ public class UiTestBase {
         if(browser == null || browser.isEmpty()){
             Configuration.browser = PropertyReader.get("browser");
         }
-        if(browser != null && !browser.isEmpty()){
+        else {
             Configuration.browser = browser;
         }
     }
