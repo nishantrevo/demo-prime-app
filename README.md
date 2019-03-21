@@ -24,7 +24,7 @@ Result page displays:
 #### Build app
 ##### Via Commandline
 - Open terminal and go to project root folder.
-- run **mvn clean package**
+- run **./mvnw clean package**
 - all tests in testng.xml will be executed
 - If all tests are success, jar will be created **target/demo-prime-app-0.0.1-SNAPSHOT.jar**
 
